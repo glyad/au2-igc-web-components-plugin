@@ -1,0 +1,24 @@
+<h1>IgniteUI Web Components Plugin</h1>
+<hr>
+<igc-input type="text" label="Subscribe" validation-errors.from-view="errors" igc-validate value.bind="person.name & validate">
+  <span slot="helper-text">The text should be between 2 and 4 characters or less</span>
+  <span slot="invalid"><span repeat.for="error of errors">${error.result.message}</span></span>
+</igc-input> 
+<hr>
+<igc-input type="text" label="Subscribe" validation-errors.from-view="errors" igc-validate value.bind="person.name & validate">
+  <span slot="helper-text">The text should be between 2 and 4 characters or less</span>
+  <span slot="invalid"><span repeat.for="error of errors">${error.result.message}</span></span>
+</igc-input> 
+
+
+<igc-button click.trigger="openDefaultDialog()">Open Default Dialog</igc-button>
+
+<hr>
+<hr>
+<igc-button click.trigger="dialog.show()" variant="contained">Show Dialog</igc-button>
+
+<igc-dialog ref="dialog" title="Confirmation" close-on-outside-click.bind="false">
+  <p>Are you sure you want to delete the Annual_Report_2016.pdf and Annual_Report_2017.pdf files?</p>
+  <igc-button slot="footer" click.trigger="dialog.hide()" variant="flat">Cancel</igc-button>
+  <igc-button slot="footer" click.trigger="dialog.hide()" variant="flat">OK</igc-button>
+</igc-dialog>

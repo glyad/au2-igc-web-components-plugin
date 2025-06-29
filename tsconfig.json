@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "target": "ES2017",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "sourceMap": true
+  },
+  "include": [
+    "src", "dev-app", "test"
+  ],
+  "files": [
+    "src/resource.d.ts",
+    "src/setup-two-way-binding.ts",
+    "src/igc-web-component-name.ts"
+  ]
+}

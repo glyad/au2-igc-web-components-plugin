@@ -1,0 +1,8 @@
+<igc-dialog ref="dialog" title="Confirmation" open close-on-outside-click.bind="true">
+  <div slot="title">
+    HUY - ${dialog.title}
+  </div>
+  <p>Are you sure you want to delete the Annual_Report_2016.pdf and Annual_Report_2017.pdf files?</p>
+  <igc-button slot="footer" click.trigger="cancel()" variant="flat">Cancel</igc-button>
+  <igc-button slot="footer" click.trigger="ok()" variant="flat">OK</igc-button>
+</igc-dialog>

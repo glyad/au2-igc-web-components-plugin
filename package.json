@@ -1,0 +1,102 @@
+{
+  "name": "aurelia-igc-web-components-adapter",
+  "private": false,
+  "author": {
+    "name": "David Kossoglyad",
+    "email": "david@logoui.co.il"
+  },
+  "description": "Helps you build Aurelia 2 applications using Infragistics IgniteUI web-components.",
+  "keywords": [
+    "aurelia",
+    "aurelia2",
+    "infragistics",
+    "igniteui",
+    "ignite-ui",
+    "web-components",
+    "aurelia-plugin"
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "???"
+  },
+  "license": "MIT",
+  
+  "peerDependencies": {
+    "aurelia": "latest",
+    "@aurelia/validation": "latest",
+    "@aurelia/validation-html": "latest",
+    "igniteui-webcomponents": "^6.1.1"
+  },
+  "devDependencies": {
+    "@aurelia/dialog": "latest",
+    "@aurelia/testing": "latest",
+    "@aurelia/ts-jest": "latest",
+    "@aurelia/webpack-loader": "latest",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.7",
+    "autoprefixer": "^10.4.21",
+    "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.1",
+    "eslint": "^9.30.0",
+    "globals": "^16.2.0",
+    "html-webpack-plugin": "^5.6.3",
+    "jest": "^30.0.3",
+    "jest-environment-jsdom": "^30.0.2",
+    "jest-transform-stub": "^2.0.0",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.21.0",
+    "stylelint-config-standard": "^38.0.0",
+    "ts-loader": "^9.5.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0",
+    "webpack": "^5.99.9",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "scripts": {
+    "lint:js": "eslint src test",
+    "lint": "npm run lint:js",
+    "pretest": "npm run lint",
+    "start": "webpack serve",
+    "build": "webpack --env production",
+    "analyze": "webpack --env production --analyze",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/test/**/*.spec.ts"
+    ],
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "./test/setup.ts"
+    ],
+    "transform": {
+      "\\.(css|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
+      "\\.(ts|html)$": [
+        "@aurelia/ts-jest",
+        {
+          "defaultShadowOptions": {
+            "mode": "open"
+          }
+        }
+      ]
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts"
+    ]
+  }
+}
