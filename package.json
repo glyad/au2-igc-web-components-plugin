@@ -79,7 +79,7 @@
     "analyze": "webpack --env production --analyze",
     "test": "jest",
     "prepare": "npm run build",
-    "release": "standard-version"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "jest": {
     "testMatch": [
