@@ -45,3 +45,9 @@ Aurelia
   .app(MyApp)
   .start();
 ```
+
+## Acknowledgements, Licenses, and Copyright Notices
+
+This project is intended to be used with Ignite UI for Web Components™. The plugin is not affiliated with Infragistics, Inc. or its products and services. This project is licensed under the MIT License. The Ignite UI for Web Components™ library is licensed under the separate [Infragistics license](https://www.infragistics.com/products/ignite-ui-web-components/web-components/components/general-licensing#license-agreements-in-ignite-ui-for-web-components).
+
+Copyright © 2023 David Kossoglyad
