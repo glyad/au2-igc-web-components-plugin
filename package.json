@@ -26,11 +26,10 @@
     "url": "???"
   },
   "license": "MIT",
-  
   "peerDependencies": {
-    "aurelia": "latest",
     "@aurelia/validation": "latest",
     "@aurelia/validation-html": "latest",
+    "aurelia": "latest",
     "igniteui-webcomponents": "^6.1.1"
   },
   "devDependencies": {
@@ -38,6 +37,12 @@
     "@aurelia/testing": "latest",
     "@aurelia/ts-jest": "latest",
     "@aurelia/webpack-loader": "latest",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.7",
     "autoprefixer": "^10.4.21",
@@ -51,6 +56,7 @@
     "jest-transform-stub": "^2.0.0",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.1.1",
+    "standard-version": "^9.5.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0",
@@ -72,7 +78,8 @@
     "build": "webpack --env production",
     "analyze": "webpack --env production --analyze",
     "test": "jest",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "release": "standard-version"
   },
   "jest": {
     "testMatch": [
