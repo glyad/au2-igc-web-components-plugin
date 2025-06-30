@@ -85,7 +85,6 @@ Use standard `validate` binding behavior and igcValidation attribute to the comp
 </igc-dialog>
 ```
 
-
 ### Using Ignite UI for Web Components™ Dialog component with Aurelia Dialog service
 
 - TBD
