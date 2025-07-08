@@ -1,12 +1,12 @@
-import { newInstanceForScope, resolve } from "@aurelia/kernel";
+import { newInstanceForScope, newInstanceOf, resolve } from "@aurelia/kernel";
 import { IValidationRules } from "@aurelia/validation";
 import { IValidationController } from "@aurelia/validation-html";
-import template from './my-app.html';
-import styles from 'igniteui-webcomponents/themes/light/material.css';
-import 'igniteui-webcomponents/themes/light/material.css';
 import { customElement, shadowCSS } from "aurelia";
 import { DialogService } from "@aurelia/dialog";
+import { required, maxLength, minLength, displayName } from 'aurelia-validation-decorators'
 import { Alert } from "./alert";
+import template from './my-app.html';
+import styles from 'igniteui-webcomponents/themes/light/material.css';
 
 interface Address {
   line1: string;
@@ -16,21 +16,18 @@ interface Address {
 }
 
 class Person {
+  protected readonly validationRules: IValidationRules = resolve(newInstanceOf(IValidationRules));
+  @required({message: 'Name is required.' })
+  @minLength(2, {when: (value: Person) => { 
+    return value.age > 0; } })
+  @maxLength(4)
+  @displayName('Full Name')
   public name: string = '';
-  public age: number;
+  public age: number = 1;
   public email: string;
   public pets: string[];
   public address: Address;
-  public readonly validationRules: IValidationRules = resolve(IValidationRules) 
   
-  public constructor() { 
-    this.validationRules
-      .on(this)
-      .ensure('name')
-        .minLength(2)
-        .maxLength(4)
-        .required();
-  }
 }
 
 @customElement({
@@ -43,8 +40,8 @@ export class MyApp {
   public person: Person = new Person();
 
   public constructor(
-    readonly validationController: IValidationController = resolve(newInstanceForScope(IValidationController)),
-    readonly dialogService: DialogService = resolve(DialogService)) {
+    protected readonly validationController: IValidationController = resolve(newInstanceForScope(IValidationController)),
+    private readonly dialogService: DialogService = resolve(DialogService)) {
     }
       
     public async openDefaultDialog() {
