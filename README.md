@@ -30,6 +30,10 @@ or, if you want to directly use plugin's git repo,
 npm install git@github.com:glyad/aurelia-igc-web-components-adapter.git
 ```
 
+## Learn, How to Use
+
+> See `dev-app/` folder for a working example of the plugin usage.
+
 ## Consume the plugin
 
 In your `main.ts` , import the plugin and register it with Aurelia:
@@ -93,4 +97,4 @@ Use standard `validate` binding behavior and igcValidation attribute to the comp
 
 This project is intended to be used with Ignite UI for Web Components™. The plugin is not affiliated with Infragistics, Inc. or its products and services. This project is licensed under the MIT License. The Ignite UI for Web Components™ library is licensed under the separate [Infragistics license](https://www.infragistics.com/products/ignite-ui-web-components/web-components/components/general-licensing#license-agreements-in-ignite-ui-for-web-components).
 
-Copyright © 2023 David Kossoglyad
+Copyright © 2025 David Kossoglyad
